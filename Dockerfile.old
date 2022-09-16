@@ -1,0 +1,28 @@
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+
+WORKDIR /app
+
+#EXPOSE 80
+
+# Zona horaria
+ENV TZ America/Argentina/Buenos_Aires
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+
+# Copia todos los proyectos .csproj de la carpeta src/
+COPY src/*.csproj ./
+#RUN for file in $(ls *.csproj); do mkdir -p src/${file%.*}/ && mv $file src/${file%.*}/; done
+RUN dotnet restore
+
+COPY . .
+#WORKDIR "/src/apig-integration"
+RUN dotnet publish -f net6.0 -c release -o /app
+
+FROM base AS final
+
+WORKDIR /app
+
+COPY --from=build /app .
+
+ENTRYPOINT ["dotnet", "apig-integration.dll"]
+

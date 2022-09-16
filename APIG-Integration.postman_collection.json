@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "3d8a2e2f-5629-4ece-8914-5cadbe868bad",
+		"name": "APIG-Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "APIs de Rick & Morty",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/rick/apis/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"rick",
+						"apis",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Character from rick and morty",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {},
+				"disableUrlEncoding": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/dame/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"dame",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

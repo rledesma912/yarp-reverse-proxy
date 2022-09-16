@@ -1,0 +1,8 @@
+.dockerignore
+.gitignore
+.git/
+bin
+obj
+.vscode
+Dockerfile
+project.lock.json
